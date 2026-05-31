@@ -255,3 +255,399 @@ Hub     → Layer 1
 - Fragmentation = Packet Splitting
 - Encapsulation = Adding Headers
 - Decapsulation = Removing Headers
+
+
+
+
+
+# Network Topologies
+
+Network topology refers to the physical or logical arrangement of devices and connections within a network. It determines how data flows between devices and how the network handles failures.
+
+---
+
+# Why Network Topology Matters
+
+- Defines data flow paths.
+- Affects network performance.
+- Impacts scalability.
+- Determines fault tolerance.
+- Simplifies troubleshooting.
+
+---
+
+# Star Topology
+
+The most common topology in modern networks.
+
+### Structure
+
+```text
+        PC1
+         |
+PC2 --- Switch --- PC3
+         |
+        PC4
+```
+
+### Characteristics
+
+- Central device (Switch/Hub) connects all devices.
+- Also called Hub-and-Spoke topology.
+- Easy to install and manage.
+- Most Ethernet LANs use this design.
+
+### Advantages
+
+- Easy troubleshooting.
+- Failure of one cable affects only one device.
+- Scalable.
+
+### Disadvantages
+
+- Central switch becomes a single point of failure.
+
+### Example
+
+- Office LAN using an Ethernet switch.
+
+---
+
+# Ring Topology
+
+Devices are connected in a circular path.
+
+### Structure
+
+```text
+PC1 ---- PC2
+ |        |
+ |        |
+PC4 ---- PC3
+```
+
+### Characteristics
+
+- Data travels around the ring.
+- Common in WANs and MANs.
+- Provides redundancy.
+
+### Advantages
+
+- Predictable data flow.
+- Can maintain connectivity through alternate paths.
+
+### Disadvantages
+
+- More complex than star topology.
+- Failure can impact performance.
+
+### Example
+
+- Metro Ethernet networks.
+- Service provider networks.
+
+---
+
+# Bus Topology
+
+All devices share a single communication cable called a backbone.
+
+### Structure
+
+```text
+PC1 --- PC2 --- PC3 --- PC4
+          |
+      Backbone
+```
+
+### Characteristics
+
+- Single cable connects all devices.
+- Popular in early Ethernet networks.
+- Rare in modern LANs.
+
+### Advantages
+
+- Low cost.
+- Simple design.
+
+### Disadvantages
+
+- Single cable failure can disrupt the network.
+- Difficult troubleshooting.
+- Limited scalability.
+
+### Example
+
+- Legacy Ethernet (10Base2, 10Base5).
+- Automotive CAN Bus systems.
+
+---
+
+# Mesh Topology
+
+Devices are connected through multiple paths.
+
+### Structure
+
+```text
+     Site A
+    /     \
+   /       \
+Site B --- Site C
+```
+
+### Characteristics
+
+- Multiple interconnections.
+- High redundancy.
+- Provides fault tolerance.
+
+### Advantages
+
+- No single point of failure.
+- Excellent reliability.
+- Supports load balancing.
+
+### Disadvantages
+
+- Expensive.
+- Complex management.
+
+### Example
+
+- ISP backbone networks.
+- Enterprise WAN connections.
+- SD-WAN deployments.
+
+---
+
+# Hybrid Topology
+
+Combination of two or more topologies.
+
+### Example
+
+```text
+Star LAN
+    |
+    |
+Ring WAN
+    |
+    |
+Star LAN
+```
+
+### Characteristics
+
+- Flexible design.
+- Common in large organizations.
+
+### Advantages
+
+- Combines strengths of different topologies.
+- Highly scalable.
+
+### Disadvantages
+
+- More complex design and management.
+
+### Example
+
+- Corporate networks with multiple branch offices.
+
+---
+
+# Wireless Topologies
+
+## Infrastructure Mode
+
+Wireless devices communicate through an Access Point (AP).
+
+### Structure
+
+```text
+Laptop
+    \
+     \
+   Access Point
+     /
+    /
+Mobile
+```
+
+### Characteristics
+
+- Most common Wi-Fi deployment.
+- Centralized communication.
+
+### Advantages
+
+- Easy management.
+- Better security.
+- Supports large numbers of devices.
+
+### Example
+
+- Home Wi-Fi.
+- Office Wi-Fi.
+- Public hotspots.
+
+---
+
+## Ad Hoc Mode
+
+Devices communicate directly without an Access Point.
+
+### Structure
+
+```text
+Laptop <----> Laptop
+      <---->
+       Mobile
+```
+
+### Characteristics
+
+- Peer-to-peer communication.
+- No central device required.
+
+### Advantages
+
+- Quick setup.
+- No additional hardware.
+
+### Disadvantages
+
+- Limited range.
+- Poor scalability.
+- Less secure.
+
+### Example
+
+- Temporary file sharing.
+- Emergency communication.
+
+---
+
+## Wireless Mesh
+
+Wireless devices communicate with multiple neighboring devices.
+
+### Structure
+
+```text
+Node A ---- Node B
+   |           |
+   |           |
+Node C ---- Node D
+```
+
+### Characteristics
+
+- Self-healing network.
+- Multiple communication paths.
+- Common in IoT environments.
+
+### Advantages
+
+- High availability.
+- Automatic rerouting.
+- Large coverage area.
+
+### Disadvantages
+
+- More complex configuration.
+
+### Example
+
+- Smart home devices.
+- IoT sensor networks.
+- Smart city deployments.
+
+---
+
+# Topology Comparison
+
+| Topology | Cost | Scalability | Reliability | Common Usage |
+|-----------|---------|---------|---------|---------|
+| Star | Medium | High | High | LAN |
+| Ring | Medium | Medium | High | WAN/MAN |
+| Bus | Low | Low | Low | Legacy Networks |
+| Mesh | High | High | Very High | ISP/WAN |
+| Hybrid | Medium-High | High | High | Enterprise Networks |
+
+---
+
+# Quick Revision
+
+### Star
+
+```text
+Central Switch
+Most Common LAN Topology
+```
+
+### Ring
+
+```text
+Circular Path
+Used for Redundancy
+```
+
+### Bus
+
+```text
+Single Backbone Cable
+Legacy Ethernet
+```
+
+### Mesh
+
+```text
+Multiple Paths
+Fault Tolerant
+```
+
+### Hybrid
+
+```text
+Combination of Topologies
+```
+
+### Wireless Infrastructure
+
+```text
+Uses Access Point
+Most Common Wi-Fi
+```
+
+### Ad Hoc
+
+```text
+Device-to-Device
+No Access Point
+```
+
+### Wireless Mesh
+
+```text
+Self-Healing
+Common in IoT
+```
+
+---
+
+# Exam Tips
+
+| Topology | Key Point |
+|-----------|------------|
+| Star | Central Switch |
+| Ring | Circular Data Flow |
+| Bus | Single Backbone |
+| Mesh | Multiple Paths |
+| Hybrid | Combination Design |
+| Infrastructure | Uses AP |
+| Ad Hoc | No AP |
+| Wireless Mesh | Self-Healing Network |
