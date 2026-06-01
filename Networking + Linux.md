@@ -651,3 +651,581 @@ Common in IoT
 | Infrastructure | Uses AP |
 | Ad Hoc | No AP |
 | Wireless Mesh | Self-Healing Network |
+
+
+
+
+
+
+
+
+
+
+
+# Network Types & Architectures
+
+Network architecture defines how devices communicate, share resources, and manage network services.
+
+---
+
+# Network Architectures
+
+## Peer-to-Peer (P2P)
+
+A decentralized network where every device can act as both a client and a server.
+
+### Characteristics
+
+- No dedicated server.
+- Devices share resources directly.
+- Easy and inexpensive to set up.
+- Suitable for small networks.
+
+### Advantages
+
+- Low cost
+- Simple setup
+- No server required
+
+### Disadvantages
+
+- Difficult to manage
+- Poor scalability
+- Weaker security
+- No centralized administration
+
+### Example
+
+```text
+PC1 <----> PC2
+  \         /
+   \       /
+      PC3
+```
+
+**Use Case:** Home networks, file sharing between a few computers.
+
+---
+
+## Client-Server
+
+A centralized network where dedicated servers provide services to client devices.
+
+### Characteristics
+
+- Centralized management.
+- Dedicated servers.
+- Better security.
+- Easier authentication and access control.
+
+### Advantages
+
+- Centralized administration
+- Better security
+- Easier backups
+- Highly scalable
+
+### Disadvantages
+
+- Higher cost
+- Requires server hardware
+- Server failure can impact services
+
+### Example
+
+```text
+      Server
+         |
+ -----------------
+ |       |       |
+PC1     PC2     PC3
+```
+
+**Use Case:** Enterprises, banks, universities.
+
+---
+
+# Geographic Network Types
+
+Network classifications based on geographical coverage.
+
+---
+
+## PAN (Personal Area Network)
+
+Small network around a single person.
+
+### Range
+
+```text
+1 - 10 meters
+```
+
+### Technologies
+
+- Bluetooth
+- NFC
+- Infrared
+- USB
+
+### Example
+
+```text
+Phone <----> Bluetooth Headset
+```
+
+### Use Cases
+
+- Wireless earbuds
+- Smartwatches
+- Fitness trackers
+
+---
+
+## LAN (Local Area Network)
+
+Connects devices within a limited area.
+
+### Coverage
+
+```text
+Room, Home, Office, Building
+```
+
+### Characteristics
+
+- High speed
+- Privately owned
+- Low latency
+
+### Example
+
+```text
+PCs connected through a switch
+```
+
+### Use Cases
+
+- Home networks
+- Office networks
+
+---
+
+## WLAN (Wireless Local Area Network)
+
+A LAN using wireless communication.
+
+### Technology
+
+```text
+Wi-Fi (802.11)
+```
+
+### Example
+
+```text
+Laptop
+    |
+ Access Point
+    |
+Mobile
+```
+
+### Use Cases
+
+- Home Wi-Fi
+- Office Wi-Fi
+- Public hotspots
+
+---
+
+## CAN (Campus Area Network)
+
+Connects multiple LANs within a campus.
+
+### Coverage
+
+```text
+University Campus
+Corporate Campus
+Hospital Campus
+```
+
+### Example
+
+```text
+Building A LAN
+       |
+       |
+Building B LAN
+       |
+       |
+Building C LAN
+```
+
+### Use Cases
+
+- Universities
+- Large organizations
+
+---
+
+## MAN (Metropolitan Area Network)
+
+Connects networks across a city.
+
+### Coverage
+
+```text
+Entire City
+```
+
+### Characteristics
+
+- Larger than LAN
+- Smaller than WAN
+
+### Example
+
+```text
+Office A ----- Office B
+      \         /
+       \       /
+      City Network
+```
+
+### Use Cases
+
+- City government networks
+- ISP metro networks
+
+---
+
+## WAN (Wide Area Network)
+
+Connects networks across countries or continents.
+
+### Coverage
+
+```text
+National
+International
+Global
+```
+
+### Characteristics
+
+- Uses third-party carriers.
+- Higher latency than LAN.
+- Largest network type.
+
+### Example
+
+```text
+India Office
+      |
+ Internet/MPLS
+      |
+USA Office
+```
+
+### Use Cases
+
+- Corporate branch connectivity
+- Internet
+
+---
+
+# Specialized Network Types
+
+---
+
+## SAN (Storage Area Network)
+
+A dedicated high-speed network used for storage access.
+
+### Characteristics
+
+- Block-level storage.
+- Appears as a local disk to the OS.
+- Extremely fast.
+- Used in data centers.
+
+### Technologies
+
+- Fibre Channel
+- iSCSI
+- FCoE
+
+### Example
+
+```text
+Server
+   |
+SAN Switch
+   |
+Storage Array
+```
+
+### Advantages
+
+- High performance
+- High availability
+- Centralized storage
+
+### Use Cases
+
+- Databases
+- Virtualization
+- Enterprise storage
+
+---
+
+## NAS (Network Attached Storage)
+
+A storage device connected directly to a normal network.
+
+### Characteristics
+
+- File-level storage.
+- Accessible over Ethernet.
+- Easy deployment.
+
+### Example
+
+```text
+PC
+ \
+  \
+   Switch ---- NAS
+  /
+ /
+Laptop
+```
+
+### Protocols
+
+- SMB
+- CIFS
+- NFS
+
+### Advantages
+
+- Easy setup
+- Shared storage
+- Lower cost than SAN
+
+### Use Cases
+
+- File sharing
+- Home storage
+- Backup systems
+
+---
+
+# SAN vs NAS
+
+| Feature | SAN | NAS |
+|----------|----------|----------|
+| Access Type | Block Level | File Level |
+| Speed | Very High | Moderate |
+| Cost | High | Lower |
+| Network | Dedicated Storage Network | Standard Ethernet |
+| Appears As | Local Disk | Shared Folder |
+
+---
+
+# VPN (Virtual Private Network)
+
+Creates a secure encrypted tunnel over a public network.
+
+### Purpose
+
+- Secure communication
+- Remote access
+- Site connectivity
+- Data protection
+
+### Core Concept
+
+```text
+Data
+  ↓
+Encryption
+  ↓
+Internet
+  ↓
+Decryption
+```
+
+### Benefits
+
+- Privacy
+- Security
+- Remote connectivity
+
+---
+
+## Site-to-Site VPN
+
+Connects entire networks together.
+
+### Example
+
+```text
+Branch Office
+      |
+   VPN Tunnel
+      |
+Head Office
+```
+
+### Use Cases
+
+- Company branches
+- Multi-office organizations
+
+---
+
+## Client-to-Site VPN (Remote Access VPN)
+
+Connects individual users to a corporate network.
+
+### Example
+
+```text
+Remote Employee
+       |
+   VPN Tunnel
+       |
+Corporate Network
+```
+
+### Use Cases
+
+- Work from home
+- Remote administration
+
+---
+
+# SD-WAN (Software Defined WAN)
+
+A software-driven approach to managing WAN traffic.
+
+### Traditional WAN
+
+```text
+Manual Configuration
+Expensive MPLS Links
+Fixed Routing
+```
+
+### SD-WAN
+
+```text
+Centralized Management
+Automatic Path Selection
+Traffic Optimization
+```
+
+### Features
+
+- Software controlled
+- Intelligent routing
+- Multiple WAN links
+- Application-aware traffic management
+
+### Example
+
+```text
+          SD-WAN Controller
+                 |
+    ----------------------------
+    |             |            |
+ MPLS        Broadband      5G/LTE
+```
+
+### Advantages
+
+- Lower WAN costs
+- Better performance
+- Simplified management
+- Improved redundancy
+
+---
+
+# Quick Revision
+
+## Network Architectures
+
+| Type | Key Point |
+|--------|-----------|
+| P2P | No Dedicated Server |
+| Client-Server | Centralized Management |
+
+---
+
+## Geographic Networks
+
+| Type | Coverage |
+|--------|----------|
+| PAN | Personal Devices |
+| LAN | Building |
+| WLAN | Wireless LAN |
+| CAN | Campus |
+| MAN | City |
+| WAN | Country/Global |
+
+---
+
+## Storage Networks
+
+| Type | Purpose |
+|--------|---------|
+| SAN | High-Speed Storage Network |
+| NAS | Network File Storage |
+
+---
+
+## VPN Types
+
+| Type | Purpose |
+|--------|---------|
+| Site-to-Site | Connect Networks |
+| Client-to-Site | Connect Users |
+
+---
+
+## SD-WAN
+
+```text
+Software Managed WAN
+Automatic Path Selection
+Uses MPLS + Internet + LTE
+```
+
+---
+
+# Exam Tips
+
+```text
+PAN  → Personal Devices (Bluetooth)
+
+LAN  → Home/Office Network
+
+WLAN → Wireless LAN
+
+CAN  → Campus Network
+
+MAN  → City-Wide Network
+
+WAN  → Global Network
+
+SAN  → Block-Level Storage
+
+NAS  → File-Level Storage
+
+VPN  → Encrypted Tunnel
+
+SD-WAN → Software Managed WAN
+```
