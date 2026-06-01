@@ -1229,3 +1229,231 @@ VPN  → Encrypted Tunnel
 
 SD-WAN → Software Managed WAN
 ```
+
+
+
+# WAN Termination
+
+WAN Termination refers to the point where a customer's network connects to the service provider's network. Understanding WAN termination is important for network deployment and troubleshooting.
+
+---
+
+# Demarcation Point (Dmarc)
+
+The **Demarcation Point (Dmarc)** is the physical boundary between the service provider's network and the customer's network.
+
+### Purpose
+
+- Defines ownership responsibility.
+- Separates carrier equipment from customer equipment.
+- Helps identify where network problems originate.
+
+### Example
+
+```text
+Service Provider Network
+           |
+           |
+        Dmarc
+           |
+           |
+Customer Network
+```
+
+### Why It Matters
+
+When troubleshooting:
+
+- Issue before Dmarc → Service Provider responsibility.
+- Issue after Dmarc → Customer responsibility.
+
+---
+
+# Customer Premises Equipment (CPE)
+
+Equipment located on the customer's side of the Dmarc.
+
+### Examples
+
+- Routers
+- Firewalls
+- Modems
+- CSU/DSU Devices
+- WAN Edge Devices
+
+### Diagram
+
+```text
+ISP Network
+     |
+   Dmarc
+     |
+     |
+   Router (CPE)
+     |
+ Internal Network
+```
+
+### Characteristics
+
+- Owned or managed by customer.
+- Connects internal network to WAN.
+- First device inside customer premises.
+
+---
+
+# Smartjack (NIU)
+
+A **Smartjack** (Network Interface Unit - NIU) is an intelligent device installed by the service provider.
+
+### Functions
+
+- Signal conversion.
+- Line monitoring.
+- Remote diagnostics.
+- Fault isolation.
+
+### Diagram
+
+```text
+ISP Network
+      |
+  Smartjack
+      |
+   Router
+      |
+ Internal LAN
+```
+
+### Characteristics
+
+- Powered device.
+- Managed by service provider.
+- Supports remote testing.
+- Provides performance monitoring.
+
+### Benefits
+
+- Faster troubleshooting.
+- Reduces onsite technician visits.
+- Helps identify line problems remotely.
+
+---
+
+# WAN Connection Components
+
+```text
+Service Provider
+        |
+        |
+    Smartjack
+        |
+      Dmarc
+        |
+     Router
+        |
+   Internal LAN
+```
+
+---
+
+# Troubleshooting WAN Issues
+
+## Step 1: Check Internal Equipment
+
+Verify:
+
+- Router status
+- Interface status
+- Cabling
+- Power
+
+---
+
+## Step 2: Test at the Dmarc
+
+Connect a testing device directly to the provider side of the Dmarc.
+
+```text
+Provider Network
+      |
+    Dmarc
+      |
+ Test Device
+```
+
+### Results
+
+| Result | Conclusion |
+|----------|-----------|
+| Test Passes | Problem is in customer network |
+| Test Fails | Problem is in provider network |
+
+---
+
+## Step 3: Use Smartjack Diagnostics
+
+The service provider can:
+
+- Monitor line status.
+- Check signal quality.
+- Run loopback tests.
+- Identify circuit failures remotely.
+
+---
+
+# Dmarc vs Smartjack
+
+| Feature | Dmarc | Smartjack |
+|----------|----------|----------|
+| Purpose | Network Boundary | Intelligent Interface |
+| Ownership | Shared Boundary | Service Provider |
+| Diagnostics | No | Yes |
+| Power Required | No | Yes |
+| Remote Monitoring | No | Yes |
+
+---
+
+# Quick Revision
+
+### Dmarc
+
+```text
+Boundary Between ISP and Customer
+Used to Determine Responsibility
+```
+
+### CPE
+
+```text
+Customer-Owned Equipment
+Router, Firewall, Modem
+```
+
+### Smartjack (NIU)
+
+```text
+Carrier-Owned Device
+Supports Remote Diagnostics
+```
+
+### Troubleshooting Rule
+
+```text
+Issue Before Dmarc  → ISP Problem
+
+Issue After Dmarc   → Customer Problem
+```
+
+---
+
+# Exam Tips
+
+| Term | Remember |
+|--------|-----------|
+| Dmarc | ISP ↔ Customer Boundary |
+| CPE | Customer Equipment |
+| Smartjack | Intelligent WAN Interface |
+| NIU | Network Interface Unit |
+| Loopback Test | WAN Diagnostics |
+| WAN Termination | Connection Point to ISP |
