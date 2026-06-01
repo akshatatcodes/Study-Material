@@ -1457,3 +1457,525 @@ Issue After Dmarc   → Customer Problem
 | NIU | Network Interface Unit |
 | Loopback Test | WAN Diagnostics |
 | WAN Termination | Connection Point to ISP |
+
+
+
+
+
+# WAN Provider Connectivity Technologies
+
+Organizations use various technologies to connect their local networks (LANs) to Internet Service Providers (ISPs) and Wide Area Networks (WANs).
+
+---
+
+# WAN Connectivity Overview
+
+```text
+Internal LAN
+      |
+   Router
+      |
+   Provider Link
+      |
+      ISP
+      |
+   Internet/WAN
+```
+
+---
+
+# DSL (Digital Subscriber Line)
+
+Uses existing telephone copper lines for internet connectivity.
+
+### Characteristics
+
+- Runs over traditional phone lines.
+- Supports simultaneous voice and data.
+- Asymmetric speeds are common.
+
+### Types
+
+| Type | Description |
+|--------|------------|
+| ADSL | Faster download than upload |
+| SDSL | Same upload and download speed |
+| VDSL | Higher speed DSL |
+
+### Advantages
+
+- Widely available
+- Low cost
+- Uses existing infrastructure
+
+### Disadvantages
+
+- Speed decreases with distance
+- Slower than fiber
+
+### Example
+
+```text
+Home Router
+      |
+ Telephone Line
+      |
+     ISP
+```
+
+---
+
+# Cable Broadband
+
+Uses coaxial cable television infrastructure.
+
+### Standard
+
+```text
+DOCSIS (Data Over Cable Service Interface Specification)
+```
+
+### Characteristics
+
+- High-speed internet access.
+- Shared bandwidth among nearby users.
+
+### Advantages
+
+- Faster than DSL.
+- Widely available.
+
+### Disadvantages
+
+- Performance may decrease during peak usage.
+
+### Example
+
+```text
+Home Router
+      |
+ Coaxial Cable
+      |
+ Cable Provider
+```
+
+---
+
+# Fiber
+
+Uses fiber-optic cables to transmit data using light.
+
+### Characteristics
+
+- Extremely high bandwidth.
+- Low latency.
+- Long-distance communication.
+
+### Advantages
+
+- Very fast
+- Reliable
+- Scalable
+
+### Disadvantages
+
+- Higher installation cost
+
+### Example
+
+```text
+Router
+   |
+ Fiber Link
+   |
+   ISP
+```
+
+---
+
+# Metro Ethernet (Metro-E)
+
+Ethernet services delivered across a metropolitan area.
+
+### Characteristics
+
+- Uses Ethernet technology.
+- High-speed site-to-site connectivity.
+- Common for businesses.
+
+### Example
+
+```text
+Office A
+    |
+ Metro Ethernet
+    |
+Office B
+```
+
+### Benefits
+
+- High performance
+- Low latency
+- Easy integration with existing LANs
+
+---
+
+# Leased Lines
+
+Dedicated private connections rented from a carrier.
+
+### Common Types
+
+| Type | Speed |
+|--------|--------|
+| T1 | 1.544 Mbps |
+| T3 | 44.736 Mbps |
+
+### Characteristics
+
+- Dedicated bandwidth.
+- Symmetrical speeds.
+- Reliable connectivity.
+
+### Advantages
+
+- Consistent performance.
+- Private connection.
+
+### Disadvantages
+
+- Expensive.
+
+### Example
+
+```text
+Head Office
+      |
+ Dedicated Circuit
+      |
+Branch Office
+```
+
+---
+
+# MPLS (Multiprotocol Label Switching)
+
+Private WAN technology used by enterprises.
+
+### Characteristics
+
+- Label-based forwarding.
+- Faster routing decisions.
+- Supports QoS (Quality of Service).
+
+### Advantages
+
+- Reliable
+- Secure
+- Predictable performance
+
+### Example
+
+```text
+Office A
+    |
+ MPLS Cloud
+    |
+Office B
+    |
+Office C
+```
+
+### Common Uses
+
+- Enterprise WANs
+- Voice traffic
+- Critical applications
+
+---
+
+# Satellite Internet
+
+Uses satellites for network connectivity.
+
+### Characteristics
+
+- Available in remote areas.
+- Does not require ground infrastructure.
+
+### Advantages
+
+- Wide coverage.
+- Useful in rural locations.
+
+### Disadvantages
+
+- High latency.
+- Weather can affect performance.
+
+### Example
+
+```text
+Remote Site
+      |
+  Satellite
+      |
+ Ground Station
+      |
+   Internet
+```
+
+---
+
+# WAN Termination
+
+WAN termination refers to the point where the customer network connects to the service provider network.
+
+---
+
+# Demarcation Point (Demarc)
+
+The physical boundary between the service provider and customer network.
+
+### Purpose
+
+- Defines responsibility.
+- Separates ISP equipment from customer equipment.
+- Simplifies troubleshooting.
+
+### Diagram
+
+```text
+ISP Network
+      |
+    Demarc
+      |
+Customer Network
+```
+
+### Troubleshooting Rule
+
+```text
+Issue Before Demarc → ISP Responsibility
+
+Issue After Demarc → Customer Responsibility
+```
+
+---
+
+# Customer Premises Equipment (CPE)
+
+Equipment located on the customer side of the Demarc.
+
+### Examples
+
+- Router
+- Firewall
+- Modem
+- WAN Edge Device
+
+### Diagram
+
+```text
+ISP
+ |
+Demarc
+ |
+Router (CPE)
+ |
+LAN
+```
+
+---
+
+# Smartjack (NIU)
+
+Network Interface Unit installed by the carrier.
+
+### Functions
+
+- Line monitoring
+- Remote diagnostics
+- Fault isolation
+- Loopback testing
+
+### Characteristics
+
+- Intelligent device
+- Provider managed
+- Powered equipment
+
+### Diagram
+
+```text
+ISP Network
+      |
+  Smartjack
+      |
+    Router
+      |
+     LAN
+```
+
+### Benefits
+
+- Faster troubleshooting
+- Remote testing
+- Reduced technician visits
+
+---
+
+# Troubleshooting WAN Links
+
+## Step 1: Verify Customer Equipment
+
+Check:
+
+- Router status
+- Interface status
+- Power
+- Cabling
+
+---
+
+## Step 2: Test at the Demarc
+
+```text
+Provider Side
+      |
+    Demarc
+      |
+ Test Device
+```
+
+### Results
+
+| Result | Conclusion |
+|----------|-----------|
+| Test Passes | Customer-side problem |
+| Test Fails | ISP-side problem |
+
+---
+
+## Step 3: Smartjack Diagnostics
+
+Provider can perform:
+
+- Remote monitoring
+- Loopback testing
+- Signal quality checks
+- Circuit diagnostics
+
+---
+
+# Connectivity Technology Comparison
+
+| Technology | Medium | Speed | Distance | Cost |
+|------------|---------|--------|----------|------|
+| DSL | Copper Phone Line | Medium | Medium | Low |
+| Cable | Coaxial Cable | High | Medium | Low |
+| Fiber | Fiber Optic | Very High | Long | Medium-High |
+| Metro Ethernet | Ethernet/Fiber | High | City Wide | Medium |
+| Leased Line | Dedicated Circuit | Guaranteed | Long | High |
+| MPLS | Carrier Network | High | Global | High |
+| Satellite | Satellite Link | Medium | Global | High |
+
+---
+
+# Quick Revision
+
+### DSL
+
+```text
+Uses Telephone Lines
+ADSL, SDSL, VDSL
+```
+
+### Cable
+
+```text
+Uses Coaxial Cable
+DOCSIS Standard
+```
+
+### Fiber
+
+```text
+Uses Light
+Fastest WAN Technology
+```
+
+### Metro Ethernet
+
+```text
+Ethernet Across a City
+Business Connectivity
+```
+
+### Leased Line
+
+```text
+Dedicated Private Circuit
+Guaranteed Bandwidth
+```
+
+### MPLS
+
+```text
+Private Enterprise WAN
+Label-Based Routing
+```
+
+### Satellite
+
+```text
+Remote Locations
+High Latency
+```
+
+### Demarc
+
+```text
+ISP ↔ Customer Boundary
+```
+
+### CPE
+
+```text
+Customer Equipment
+Router, Firewall, Modem
+```
+
+### Smartjack
+
+```text
+Provider-Owned NIU
+Remote Diagnostics
+```
+
+---
+
+# Exam Tips
+
+```text
+DSL        → Telephone Lines
+
+Cable      → DOCSIS
+
+Fiber      → Highest Speed
+
+Metro-E    → Ethernet WAN
+
+Leased Line → Dedicated Circuit
+
+MPLS       → Private Enterprise WAN
+
+Satellite  → Remote Connectivity
+
+Demarc     → Responsibility Boundary
+
+CPE        → Customer Equipment
+
+Smartjack  → Remote WAN Diagnostics
+```
