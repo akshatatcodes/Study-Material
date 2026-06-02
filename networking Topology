@@ -1,0 +1,1719 @@
+# Network Topologies
+
+Network topology refers to the physical or logical arrangement of devices and connections within a network. It determines how data flows between devices and how the network handles failures.
+
+---
+
+# Why Network Topology Matters
+
+- Defines data flow paths.
+- Affects network performance.
+- Impacts scalability.
+- Determines fault tolerance.
+- Simplifies troubleshooting.
+
+---
+
+# Star Topology
+
+The most common topology in modern networks.
+
+### Structure
+
+```text
+        PC1
+         |
+PC2 --- Switch --- PC3
+         |
+        PC4
+```
+
+### Characteristics
+
+- Central device (Switch/Hub) connects all devices.
+- Also called Hub-and-Spoke topology.
+- Easy to install and manage.
+- Most Ethernet LANs use this design.
+
+### Advantages
+
+- Easy troubleshooting.
+- Failure of one cable affects only one device.
+- Scalable.
+
+### Disadvantages
+
+- Central switch becomes a single point of failure.
+
+### Example
+
+- Office LAN using an Ethernet switch.
+
+---
+
+# Ring Topology
+
+Devices are connected in a circular path.
+
+### Structure
+
+```text
+PC1 ---- PC2
+ |        |
+ |        |
+PC4 ---- PC3
+```
+
+### Characteristics
+
+- Data travels around the ring.
+- Common in WANs and MANs.
+- Provides redundancy.
+
+### Advantages
+
+- Predictable data flow.
+- Can maintain connectivity through alternate paths.
+
+### Disadvantages
+
+- More complex than star topology.
+- Failure can impact performance.
+
+### Example
+
+- Metro Ethernet networks.
+- Service provider networks.
+
+---
+
+# Bus Topology
+
+All devices share a single communication cable called a backbone.
+
+### Structure
+
+```text
+PC1 --- PC2 --- PC3 --- PC4
+          |
+      Backbone
+```
+
+### Characteristics
+
+- Single cable connects all devices.
+- Popular in early Ethernet networks.
+- Rare in modern LANs.
+
+### Advantages
+
+- Low cost.
+- Simple design.
+
+### Disadvantages
+
+- Single cable failure can disrupt the network.
+- Difficult troubleshooting.
+- Limited scalability.
+
+### Example
+
+- Legacy Ethernet (10Base2, 10Base5).
+- Automotive CAN Bus systems.
+
+---
+
+# Mesh Topology
+
+Devices are connected through multiple paths.
+
+### Structure
+
+```text
+     Site A
+    /     \
+   /       \
+Site B --- Site C
+```
+
+### Characteristics
+
+- Multiple interconnections.
+- High redundancy.
+- Provides fault tolerance.
+
+### Advantages
+
+- No single point of failure.
+- Excellent reliability.
+- Supports load balancing.
+
+### Disadvantages
+
+- Expensive.
+- Complex management.
+
+### Example
+
+- ISP backbone networks.
+- Enterprise WAN connections.
+- SD-WAN deployments.
+
+---
+
+# Hybrid Topology
+
+Combination of two or more topologies.
+
+### Example
+
+```text
+Star LAN
+    |
+    |
+Ring WAN
+    |
+    |
+Star LAN
+```
+
+### Characteristics
+
+- Flexible design.
+- Common in large organizations.
+
+### Advantages
+
+- Combines strengths of different topologies.
+- Highly scalable.
+
+### Disadvantages
+
+- More complex design and management.
+
+### Example
+
+- Corporate networks with multiple branch offices.
+
+---
+
+# Wireless Topologies
+
+## Infrastructure Mode
+
+Wireless devices communicate through an Access Point (AP).
+
+### Structure
+
+```text
+Laptop
+    \
+     \
+   Access Point
+     /
+    /
+Mobile
+```
+
+### Characteristics
+
+- Most common Wi-Fi deployment.
+- Centralized communication.
+
+### Advantages
+
+- Easy management.
+- Better security.
+- Supports large numbers of devices.
+
+### Example
+
+- Home Wi-Fi.
+- Office Wi-Fi.
+- Public hotspots.
+
+---
+
+## Ad Hoc Mode
+
+Devices communicate directly without an Access Point.
+
+### Structure
+
+```text
+Laptop <----> Laptop
+      <---->
+       Mobile
+```
+
+### Characteristics
+
+- Peer-to-peer communication.
+- No central device required.
+
+### Advantages
+
+- Quick setup.
+- No additional hardware.
+
+### Disadvantages
+
+- Limited range.
+- Poor scalability.
+- Less secure.
+
+### Example
+
+- Temporary file sharing.
+- Emergency communication.
+
+---
+
+## Wireless Mesh
+
+Wireless devices communicate with multiple neighboring devices.
+
+### Structure
+
+```text
+Node A ---- Node B
+   |           |
+   |           |
+Node C ---- Node D
+```
+
+### Characteristics
+
+- Self-healing network.
+- Multiple communication paths.
+- Common in IoT environments.
+
+### Advantages
+
+- High availability.
+- Automatic rerouting.
+- Large coverage area.
+
+### Disadvantages
+
+- More complex configuration.
+
+### Example
+
+- Smart home devices.
+- IoT sensor networks.
+- Smart city deployments.
+
+---
+
+# Topology Comparison
+
+| Topology | Cost | Scalability | Reliability | Common Usage |
+|-----------|---------|---------|---------|---------|
+| Star | Medium | High | High | LAN |
+| Ring | Medium | Medium | High | WAN/MAN |
+| Bus | Low | Low | Low | Legacy Networks |
+| Mesh | High | High | Very High | ISP/WAN |
+| Hybrid | Medium-High | High | High | Enterprise Networks |
+
+---
+
+# Quick Revision
+
+### Star
+
+```text
+Central Switch
+Most Common LAN Topology
+```
+
+### Ring
+
+```text
+Circular Path
+Used for Redundancy
+```
+
+### Bus
+
+```text
+Single Backbone Cable
+Legacy Ethernet
+```
+
+### Mesh
+
+```text
+Multiple Paths
+Fault Tolerant
+```
+
+### Hybrid
+
+```text
+Combination of Topologies
+```
+
+### Wireless Infrastructure
+
+```text
+Uses Access Point
+Most Common Wi-Fi
+```
+
+### Ad Hoc
+
+```text
+Device-to-Device
+No Access Point
+```
+
+### Wireless Mesh
+
+```text
+Self-Healing
+Common in IoT
+```
+
+---
+
+# Exam Tips
+
+| Topology | Key Point |
+|-----------|------------|
+| Star | Central Switch |
+| Ring | Circular Data Flow |
+| Bus | Single Backbone |
+| Mesh | Multiple Paths |
+| Hybrid | Combination Design |
+| Infrastructure | Uses AP |
+| Ad Hoc | No AP |
+| Wireless Mesh | Self-Healing Network |
+
+
+
+
+
+
+
+
+
+
+
+# Network Types & Architectures
+
+Network architecture defines how devices communicate, share resources, and manage network services.
+
+---
+
+# Network Architectures
+
+## Peer-to-Peer (P2P)
+
+A decentralized network where every device can act as both a client and a server.
+
+### Characteristics
+
+- No dedicated server.
+- Devices share resources directly.
+- Easy and inexpensive to set up.
+- Suitable for small networks.
+
+### Advantages
+
+- Low cost
+- Simple setup
+- No server required
+
+### Disadvantages
+
+- Difficult to manage
+- Poor scalability
+- Weaker security
+- No centralized administration
+
+### Example
+
+```text
+PC1 <----> PC2
+  \         /
+   \       /
+      PC3
+```
+
+**Use Case:** Home networks, file sharing between a few computers.
+
+---
+
+## Client-Server
+
+A centralized network where dedicated servers provide services to client devices.
+
+### Characteristics
+
+- Centralized management.
+- Dedicated servers.
+- Better security.
+- Easier authentication and access control.
+
+### Advantages
+
+- Centralized administration
+- Better security
+- Easier backups
+- Highly scalable
+
+### Disadvantages
+
+- Higher cost
+- Requires server hardware
+- Server failure can impact services
+
+### Example
+
+```text
+      Server
+         |
+ -----------------
+ |       |       |
+PC1     PC2     PC3
+```
+
+**Use Case:** Enterprises, banks, universities.
+
+---
+
+# Geographic Network Types
+
+Network classifications based on geographical coverage.
+
+---
+
+## PAN (Personal Area Network)
+
+Small network around a single person.
+
+### Range
+
+```text
+1 - 10 meters
+```
+
+### Technologies
+
+- Bluetooth
+- NFC
+- Infrared
+- USB
+
+### Example
+
+```text
+Phone <----> Bluetooth Headset
+```
+
+### Use Cases
+
+- Wireless earbuds
+- Smartwatches
+- Fitness trackers
+
+---
+
+## LAN (Local Area Network)
+
+Connects devices within a limited area.
+
+### Coverage
+
+```text
+Room, Home, Office, Building
+```
+
+### Characteristics
+
+- High speed
+- Privately owned
+- Low latency
+
+### Example
+
+```text
+PCs connected through a switch
+```
+
+### Use Cases
+
+- Home networks
+- Office networks
+
+---
+
+## WLAN (Wireless Local Area Network)
+
+A LAN using wireless communication.
+
+### Technology
+
+```text
+Wi-Fi (802.11)
+```
+
+### Example
+
+```text
+Laptop
+    |
+ Access Point
+    |
+Mobile
+```
+
+### Use Cases
+
+- Home Wi-Fi
+- Office Wi-Fi
+- Public hotspots
+
+---
+
+## CAN (Campus Area Network)
+
+Connects multiple LANs within a campus.
+
+### Coverage
+
+```text
+University Campus
+Corporate Campus
+Hospital Campus
+```
+
+### Example
+
+```text
+Building A LAN
+       |
+       |
+Building B LAN
+       |
+       |
+Building C LAN
+```
+
+### Use Cases
+
+- Universities
+- Large organizations
+
+---
+
+## MAN (Metropolitan Area Network)
+
+Connects networks across a city.
+
+### Coverage
+
+```text
+Entire City
+```
+
+### Characteristics
+
+- Larger than LAN
+- Smaller than WAN
+
+### Example
+
+```text
+Office A ----- Office B
+      \         /
+       \       /
+      City Network
+```
+
+### Use Cases
+
+- City government networks
+- ISP metro networks
+
+---
+
+## WAN (Wide Area Network)
+
+Connects networks across countries or continents.
+
+### Coverage
+
+```text
+National
+International
+Global
+```
+
+### Characteristics
+
+- Uses third-party carriers.
+- Higher latency than LAN.
+- Largest network type.
+
+### Example
+
+```text
+India Office
+      |
+ Internet/MPLS
+      |
+USA Office
+```
+
+### Use Cases
+
+- Corporate branch connectivity
+- Internet
+
+---
+
+# Specialized Network Types
+
+---
+
+## SAN (Storage Area Network)
+
+A dedicated high-speed network used for storage access.
+
+### Characteristics
+
+- Block-level storage.
+- Appears as a local disk to the OS.
+- Extremely fast.
+- Used in data centers.
+
+### Technologies
+
+- Fibre Channel
+- iSCSI
+- FCoE
+
+### Example
+
+```text
+Server
+   |
+SAN Switch
+   |
+Storage Array
+```
+
+### Advantages
+
+- High performance
+- High availability
+- Centralized storage
+
+### Use Cases
+
+- Databases
+- Virtualization
+- Enterprise storage
+
+---
+
+## NAS (Network Attached Storage)
+
+A storage device connected directly to a normal network.
+
+### Characteristics
+
+- File-level storage.
+- Accessible over Ethernet.
+- Easy deployment.
+
+### Example
+
+```text
+PC
+ \
+  \
+   Switch ---- NAS
+  /
+ /
+Laptop
+```
+
+### Protocols
+
+- SMB
+- CIFS
+- NFS
+
+### Advantages
+
+- Easy setup
+- Shared storage
+- Lower cost than SAN
+
+### Use Cases
+
+- File sharing
+- Home storage
+- Backup systems
+
+---
+
+# SAN vs NAS
+
+| Feature | SAN | NAS |
+|----------|----------|----------|
+| Access Type | Block Level | File Level |
+| Speed | Very High | Moderate |
+| Cost | High | Lower |
+| Network | Dedicated Storage Network | Standard Ethernet |
+| Appears As | Local Disk | Shared Folder |
+
+---
+
+# VPN (Virtual Private Network)
+
+Creates a secure encrypted tunnel over a public network.
+
+### Purpose
+
+- Secure communication
+- Remote access
+- Site connectivity
+- Data protection
+
+### Core Concept
+
+```text
+Data
+  ↓
+Encryption
+  ↓
+Internet
+  ↓
+Decryption
+```
+
+### Benefits
+
+- Privacy
+- Security
+- Remote connectivity
+
+---
+
+## Site-to-Site VPN
+
+Connects entire networks together.
+
+### Example
+
+```text
+Branch Office
+      |
+   VPN Tunnel
+      |
+Head Office
+```
+
+### Use Cases
+
+- Company branches
+- Multi-office organizations
+
+---
+
+## Client-to-Site VPN (Remote Access VPN)
+
+Connects individual users to a corporate network.
+
+### Example
+
+```text
+Remote Employee
+       |
+   VPN Tunnel
+       |
+Corporate Network
+```
+
+### Use Cases
+
+- Work from home
+- Remote administration
+
+---
+
+# SD-WAN (Software Defined WAN)
+
+A software-driven approach to managing WAN traffic.
+
+### Traditional WAN
+
+```text
+Manual Configuration
+Expensive MPLS Links
+Fixed Routing
+```
+
+### SD-WAN
+
+```text
+Centralized Management
+Automatic Path Selection
+Traffic Optimization
+```
+
+### Features
+
+- Software controlled
+- Intelligent routing
+- Multiple WAN links
+- Application-aware traffic management
+
+### Example
+
+```text
+          SD-WAN Controller
+                 |
+    ----------------------------
+    |             |            |
+ MPLS        Broadband      5G/LTE
+```
+
+### Advantages
+
+- Lower WAN costs
+- Better performance
+- Simplified management
+- Improved redundancy
+
+---
+
+# Quick Revision
+
+## Network Architectures
+
+| Type | Key Point |
+|--------|-----------|
+| P2P | No Dedicated Server |
+| Client-Server | Centralized Management |
+
+---
+
+## Geographic Networks
+
+| Type | Coverage |
+|--------|----------|
+| PAN | Personal Devices |
+| LAN | Building |
+| WLAN | Wireless LAN |
+| CAN | Campus |
+| MAN | City |
+| WAN | Country/Global |
+
+---
+
+## Storage Networks
+
+| Type | Purpose |
+|--------|---------|
+| SAN | High-Speed Storage Network |
+| NAS | Network File Storage |
+
+---
+
+## VPN Types
+
+| Type | Purpose |
+|--------|---------|
+| Site-to-Site | Connect Networks |
+| Client-to-Site | Connect Users |
+
+---
+
+## SD-WAN
+
+```text
+Software Managed WAN
+Automatic Path Selection
+Uses MPLS + Internet + LTE
+```
+
+---
+
+# Exam Tips
+
+```text
+PAN  → Personal Devices (Bluetooth)
+
+LAN  → Home/Office Network
+
+WLAN → Wireless LAN
+
+CAN  → Campus Network
+
+MAN  → City-Wide Network
+
+WAN  → Global Network
+
+SAN  → Block-Level Storage
+
+NAS  → File-Level Storage
+
+VPN  → Encrypted Tunnel
+
+SD-WAN → Software Managed WAN
+```
+
+
+
+# WAN Termination
+
+WAN Termination refers to the point where a customer's network connects to the service provider's network. Understanding WAN termination is important for network deployment and troubleshooting.
+
+---
+
+# Demarcation Point (Dmarc)
+
+The **Demarcation Point (Dmarc)** is the physical boundary between the service provider's network and the customer's network.
+
+### Purpose
+
+- Defines ownership responsibility.
+- Separates carrier equipment from customer equipment.
+- Helps identify where network problems originate.
+
+### Example
+
+```text
+Service Provider Network
+           |
+           |
+        Dmarc
+           |
+           |
+Customer Network
+```
+
+### Why It Matters
+
+When troubleshooting:
+
+- Issue before Dmarc → Service Provider responsibility.
+- Issue after Dmarc → Customer responsibility.
+
+---
+
+# Customer Premises Equipment (CPE)
+
+Equipment located on the customer's side of the Dmarc.
+
+### Examples
+
+- Routers
+- Firewalls
+- Modems
+- CSU/DSU Devices
+- WAN Edge Devices
+
+### Diagram
+
+```text
+ISP Network
+     |
+   Dmarc
+     |
+     |
+   Router (CPE)
+     |
+ Internal Network
+```
+
+### Characteristics
+
+- Owned or managed by customer.
+- Connects internal network to WAN.
+- First device inside customer premises.
+
+---
+
+# Smartjack (NIU)
+
+A **Smartjack** (Network Interface Unit - NIU) is an intelligent device installed by the service provider.
+
+### Functions
+
+- Signal conversion.
+- Line monitoring.
+- Remote diagnostics.
+- Fault isolation.
+
+### Diagram
+
+```text
+ISP Network
+      |
+  Smartjack
+      |
+   Router
+      |
+ Internal LAN
+```
+
+### Characteristics
+
+- Powered device.
+- Managed by service provider.
+- Supports remote testing.
+- Provides performance monitoring.
+
+### Benefits
+
+- Faster troubleshooting.
+- Reduces onsite technician visits.
+- Helps identify line problems remotely.
+
+---
+
+# WAN Connection Components
+
+```text
+Service Provider
+        |
+        |
+    Smartjack
+        |
+      Dmarc
+        |
+     Router
+        |
+   Internal LAN
+```
+
+---
+
+# Troubleshooting WAN Issues
+
+## Step 1: Check Internal Equipment
+
+Verify:
+
+- Router status
+- Interface status
+- Cabling
+- Power
+
+---
+
+## Step 2: Test at the Dmarc
+
+Connect a testing device directly to the provider side of the Dmarc.
+
+```text
+Provider Network
+      |
+    Dmarc
+      |
+ Test Device
+```
+
+### Results
+
+| Result | Conclusion |
+|----------|-----------|
+| Test Passes | Problem is in customer network |
+| Test Fails | Problem is in provider network |
+
+---
+
+## Step 3: Use Smartjack Diagnostics
+
+The service provider can:
+
+- Monitor line status.
+- Check signal quality.
+- Run loopback tests.
+- Identify circuit failures remotely.
+
+---
+
+# Dmarc vs Smartjack
+
+| Feature | Dmarc | Smartjack |
+|----------|----------|----------|
+| Purpose | Network Boundary | Intelligent Interface |
+| Ownership | Shared Boundary | Service Provider |
+| Diagnostics | No | Yes |
+| Power Required | No | Yes |
+| Remote Monitoring | No | Yes |
+
+---
+
+# Quick Revision
+
+### Dmarc
+
+```text
+Boundary Between ISP and Customer
+Used to Determine Responsibility
+```
+
+### CPE
+
+```text
+Customer-Owned Equipment
+Router, Firewall, Modem
+```
+
+### Smartjack (NIU)
+
+```text
+Carrier-Owned Device
+Supports Remote Diagnostics
+```
+
+### Troubleshooting Rule
+
+```text
+Issue Before Dmarc  → ISP Problem
+
+Issue After Dmarc   → Customer Problem
+```
+
+---
+
+# Exam Tips
+
+| Term | Remember |
+|--------|-----------|
+| Dmarc | ISP ↔ Customer Boundary |
+| CPE | Customer Equipment |
+| Smartjack | Intelligent WAN Interface |
+| NIU | Network Interface Unit |
+| Loopback Test | WAN Diagnostics |
+| WAN Termination | Connection Point to ISP |
+
+
+
+
+
+# WAN Provider Connectivity Technologies
+
+Organizations use various technologies to connect their local networks (LANs) to Internet Service Providers (ISPs) and Wide Area Networks (WANs).
+
+---
+
+# WAN Connectivity Overview
+
+```text
+Internal LAN
+      |
+   Router
+      |
+   Provider Link
+      |
+      ISP
+      |
+   Internet/WAN
+```
+
+---
+
+# DSL (Digital Subscriber Line)
+
+Uses existing telephone copper lines for internet connectivity.
+
+### Characteristics
+
+- Runs over traditional phone lines.
+- Supports simultaneous voice and data.
+- Asymmetric speeds are common.
+
+### Types
+
+| Type | Description |
+|--------|------------|
+| ADSL | Faster download than upload |
+| SDSL | Same upload and download speed |
+| VDSL | Higher speed DSL |
+
+### Advantages
+
+- Widely available
+- Low cost
+- Uses existing infrastructure
+
+### Disadvantages
+
+- Speed decreases with distance
+- Slower than fiber
+
+### Example
+
+```text
+Home Router
+      |
+ Telephone Line
+      |
+     ISP
+```
+
+---
+
+# Cable Broadband
+
+Uses coaxial cable television infrastructure.
+
+### Standard
+
+```text
+DOCSIS (Data Over Cable Service Interface Specification)
+```
+
+### Characteristics
+
+- High-speed internet access.
+- Shared bandwidth among nearby users.
+
+### Advantages
+
+- Faster than DSL.
+- Widely available.
+
+### Disadvantages
+
+- Performance may decrease during peak usage.
+
+### Example
+
+```text
+Home Router
+      |
+ Coaxial Cable
+      |
+ Cable Provider
+```
+
+---
+
+# Fiber
+
+Uses fiber-optic cables to transmit data using light.
+
+### Characteristics
+
+- Extremely high bandwidth.
+- Low latency.
+- Long-distance communication.
+
+### Advantages
+
+- Very fast
+- Reliable
+- Scalable
+
+### Disadvantages
+
+- Higher installation cost
+
+### Example
+
+```text
+Router
+   |
+ Fiber Link
+   |
+   ISP
+```
+
+---
+
+# Metro Ethernet (Metro-E)
+
+Ethernet services delivered across a metropolitan area.
+
+### Characteristics
+
+- Uses Ethernet technology.
+- High-speed site-to-site connectivity.
+- Common for businesses.
+
+### Example
+
+```text
+Office A
+    |
+ Metro Ethernet
+    |
+Office B
+```
+
+### Benefits
+
+- High performance
+- Low latency
+- Easy integration with existing LANs
+
+---
+
+# Leased Lines
+
+Dedicated private connections rented from a carrier.
+
+### Common Types
+
+| Type | Speed |
+|--------|--------|
+| T1 | 1.544 Mbps |
+| T3 | 44.736 Mbps |
+
+### Characteristics
+
+- Dedicated bandwidth.
+- Symmetrical speeds.
+- Reliable connectivity.
+
+### Advantages
+
+- Consistent performance.
+- Private connection.
+
+### Disadvantages
+
+- Expensive.
+
+### Example
+
+```text
+Head Office
+      |
+ Dedicated Circuit
+      |
+Branch Office
+```
+
+---
+
+# MPLS (Multiprotocol Label Switching)
+
+Private WAN technology used by enterprises.
+
+### Characteristics
+
+- Label-based forwarding.
+- Faster routing decisions.
+- Supports QoS (Quality of Service).
+
+### Advantages
+
+- Reliable
+- Secure
+- Predictable performance
+
+### Example
+
+```text
+Office A
+    |
+ MPLS Cloud
+    |
+Office B
+    |
+Office C
+```
+
+### Common Uses
+
+- Enterprise WANs
+- Voice traffic
+- Critical applications
+
+---
+
+# Satellite Internet
+
+Uses satellites for network connectivity.
+
+### Characteristics
+
+- Available in remote areas.
+- Does not require ground infrastructure.
+
+### Advantages
+
+- Wide coverage.
+- Useful in rural locations.
+
+### Disadvantages
+
+- High latency.
+- Weather can affect performance.
+
+### Example
+
+```text
+Remote Site
+      |
+  Satellite
+      |
+ Ground Station
+      |
+   Internet
+```
+
+---
+
+# WAN Termination
+
+WAN termination refers to the point where the customer network connects to the service provider network.
+
+---
+
+# Demarcation Point (Demarc)
+
+The physical boundary between the service provider and customer network.
+
+### Purpose
+
+- Defines responsibility.
+- Separates ISP equipment from customer equipment.
+- Simplifies troubleshooting.
+
+### Diagram
+
+```text
+ISP Network
+      |
+    Demarc
+      |
+Customer Network
+```
+
+### Troubleshooting Rule
+
+```text
+Issue Before Demarc → ISP Responsibility
+
+Issue After Demarc → Customer Responsibility
+```
+
+---
+
+# Customer Premises Equipment (CPE)
+
+Equipment located on the customer side of the Demarc.
+
+### Examples
+
+- Router
+- Firewall
+- Modem
+- WAN Edge Device
+
+### Diagram
+
+```text
+ISP
+ |
+Demarc
+ |
+Router (CPE)
+ |
+LAN
+```
+
+---
+
+# Smartjack (NIU)
+
+Network Interface Unit installed by the carrier.
+
+### Functions
+
+- Line monitoring
+- Remote diagnostics
+- Fault isolation
+- Loopback testing
+
+### Characteristics
+
+- Intelligent device
+- Provider managed
+- Powered equipment
+
+### Diagram
+
+```text
+ISP Network
+      |
+  Smartjack
+      |
+    Router
+      |
+     LAN
+```
+
+### Benefits
+
+- Faster troubleshooting
+- Remote testing
+- Reduced technician visits
+
+---
+
+# Troubleshooting WAN Links
+
+## Step 1: Verify Customer Equipment
+
+Check:
+
+- Router status
+- Interface status
+- Power
+- Cabling
+
+---
+
+## Step 2: Test at the Demarc
+
+```text
+Provider Side
+      |
+    Demarc
+      |
+ Test Device
+```
+
+### Results
+
+| Result | Conclusion |
+|----------|-----------|
+| Test Passes | Customer-side problem |
+| Test Fails | ISP-side problem |
+
+---
+
+## Step 3: Smartjack Diagnostics
+
+Provider can perform:
+
+- Remote monitoring
+- Loopback testing
+- Signal quality checks
+- Circuit diagnostics
+
+---
+
+# Connectivity Technology Comparison
+
+| Technology | Medium | Speed | Distance | Cost |
+|------------|---------|--------|----------|------|
+| DSL | Copper Phone Line | Medium | Medium | Low |
+| Cable | Coaxial Cable | High | Medium | Low |
+| Fiber | Fiber Optic | Very High | Long | Medium-High |
+| Metro Ethernet | Ethernet/Fiber | High | City Wide | Medium |
+| Leased Line | Dedicated Circuit | Guaranteed | Long | High |
+| MPLS | Carrier Network | High | Global | High |
+| Satellite | Satellite Link | Medium | Global | High |
+
+---
+
+# Quick Revision
+
+### DSL
+
+```text
+Uses Telephone Lines
+ADSL, SDSL, VDSL
+```
+
+### Cable
+
+```text
+Uses Coaxial Cable
+DOCSIS Standard
+```
+
+### Fiber
+
+```text
+Uses Light
+Fastest WAN Technology
+```
+
+### Metro Ethernet
+
+```text
+Ethernet Across a City
+Business Connectivity
+```
+
+### Leased Line
+
+```text
+Dedicated Private Circuit
+Guaranteed Bandwidth
+```
+
+### MPLS
+
+```text
+Private Enterprise WAN
+Label-Based Routing
+```
+
+### Satellite
+
+```text
+Remote Locations
+High Latency
+```
+
+### Demarc
+
+```text
+ISP ↔ Customer Boundary
+```
+
+### CPE
+
+```text
+Customer Equipment
+Router, Firewall, Modem
+```
+
+### Smartjack
+
+```text
+Provider-Owned NIU
+Remote Diagnostics
+```
+
+---
+
+# Exam Tips
+
+```text
+DSL        → Telephone Lines
+
+Cable      → DOCSIS
+
+Fiber      → Highest Speed
+
+Metro-E    → Ethernet WAN
+
+Leased Line → Dedicated Circuit
+
+MPLS       → Private Enterprise WAN
+
+Satellite  → Remote Connectivity
+
+Demarc     → Responsibility Boundary
+
+CPE        → Customer Equipment
+
+Smartjack  → Remote WAN Diagnostics
+```
